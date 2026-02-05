@@ -1,0 +1,120 @@
+@use "./variables" as *;
+
+.dashboard {
+  .dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: $spacing-lg;
+
+    h1 {
+      font-size: 32px;
+      font-weight: 700;
+      margin: 0;
+      color: $text-color;
+    }
+
+    p {
+      color: $text-color-secondary;
+      margin: 0;
+      font-size: 16px;
+    }
+  }
+
+  .empty-state {
+    margin: $spacing-xl 0;
+  }
+
+  .metric-card {
+    border-radius: $border-radius;
+    box-shadow: $box-shadow;
+    transition: all 0.3s ease;
+
+    &:hover {
+      box-shadow: $box-shadow-hover;
+      transform: translateY(-4px);
+    }
+
+    .metric-header {
+      display: flex;
+      align-items: center;
+      gap: $spacing-sm;
+      margin-bottom: $spacing-sm;
+
+      .metric-icon {
+        font-size: 24px;
+      }
+
+      .metric-title {
+        font-size: 16px;
+        font-weight: 500;
+        color: $text-color-secondary;
+      }
+    }
+
+    .metric-value {
+      margin: $spacing-sm 0;
+
+      .ant-statistic-content {
+        font-size: 32px;
+        font-weight: 700;
+      }
+    }
+
+    .metric-goal {
+      font-size: 14px;
+      color: $text-color-secondary;
+      margin-bottom: $spacing-sm;
+    }
+  }
+}
+
+.loading-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 400px;
+}
+
+body.dark-theme {
+  .dashboard {
+    .dashboard-header {
+      h1 {
+        color: $dark-text-color;
+      }
+
+      p {
+        color: $dark-text-secondary;
+      }
+    }
+
+    .metric-card {
+      background: $dark-card-background;
+      border-color: $dark-border-color;
+
+      .metric-header {
+        .metric-title {
+          color: $dark-text-secondary;
+        }
+      }
+
+      .metric-goal {
+        color: $dark-text-secondary;
+      }
+    }
+  }
+}
+
+@media (max-width: $breakpoint-md) {
+  .dashboard {
+    .dashboard-header {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: $spacing-sm;
+
+      button {
+        width: 100%;
+      }
+    }
+  }
+}

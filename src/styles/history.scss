@@ -1,0 +1,74 @@
+@use "./variables" as *;
+
+.history {
+  .history-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: $spacing-lg;
+
+    h1 {
+      font-size: 32px;
+      font-weight: 700;
+      margin: 0;
+      color: $text-color;
+    }
+  }
+
+  .chart-card {
+    border-radius: $border-radius;
+    box-shadow: $box-shadow;
+    margin-bottom: $spacing-md;
+
+    .chart-container {
+      height: 400px;
+      padding: $spacing-md 0;
+    }
+  }
+
+  .table-card {
+    border-radius: $border-radius;
+    box-shadow: $box-shadow;
+
+    .ant-card-head-title {
+      font-size: 20px;
+      font-weight: 600;
+    }
+  }
+}
+
+body.dark-theme {
+  .history {
+    .history-header {
+      h1 {
+        color: $dark-text-color;
+      }
+    }
+
+    .chart-card,
+    .table-card {
+      background: $dark-card-background;
+      border-color: $dark-border-color;
+
+      .ant-card-head {
+        border-bottom-color: $dark-border-color;
+      }
+    }
+  }
+}
+
+@media (max-width: $breakpoint-md) {
+  .history {
+    .history-header {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: $spacing-sm;
+    }
+
+    .chart-card {
+      .chart-container {
+        height: 300px;
+      }
+    }
+  }
+}
