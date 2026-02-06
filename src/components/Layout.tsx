@@ -47,7 +47,7 @@ export const Layout = () => {
     <AntLayout className="app-layout">
       <Sider breakpoint="lg" collapsedWidth="0" className="app-sider">
         <div className="logo">
-          <span>Healthify</span>
+          <span>VitaWatch</span>
         </div>
         <Menu
           mode="inline"
